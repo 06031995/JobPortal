@@ -1,0 +1,110 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav"  opened="true">
+        <mat-nav-list>
+          <!-- <mat-list-item routerLinkActive="active" > -->
+            <div fxFlex="10"style="padding-left:55px;" ><Strong><u>ADMIN PANEL</u></Strong></div><hr>
+          <!-- </mat-list-item><hr> -->
+          <mat-list-item  routerLinkActive="active" >
+              <div class="sidenav-item">
+                <a routerLink="/dash" routerLinkActive="active"style="padding-left:40px;"  ><font size="3px">Dashboard</font></a>
+              </div>
+            </mat-list-item><hr>
+          <mat-list-item  routerLinkActive="active" >
+            <div class="sidenav-item">
+              <a routerLink="/create-vacancy" routerLinkActive="active" style="padding-left:35px;" ><font size="3px">Create Vacancy</font></a>
+            </div>
+          </mat-list-item><hr>
+          <mat-list-item  routerLinkActive="active" >
+              <div class="sidenav-item">
+                <a routerLink="/created-list" routerLinkActive="active" style="padding-left:35px;" ><font size="3px">Vacancies lists</font></a>
+              </div>
+            </mat-list-item><hr>
+            <mat-list-item  routerLinkActive="active" >
+              <div class="sidenav-item">
+                <a routerLink="/mail" routerLinkActive="active"style="padding-left:35px;" ><font size="3px">Mail</font></a>
+              </div>
+            </mat-list-item><hr>
+        </mat-nav-list>
+    
+      </mat-sidenav>
+
+  
+
+   
+
+    
+    
+  <div class="topnav">
+        <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+      </div>
+          
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+              <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+              <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+              <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ 
+
+  <div class="job-search" width="100" align="center">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="padding-top: 10px;">
+      <li class="nav-item">
+        <a class="nav-link active py-3" id="pills-job-tab" data-toggle="pill" href="#pills-job" role="tab" aria-controls="pills-job" aria-selected="true">Find A Student</a>
+      </li>
+      
+    </ul>
+    <div class="tab-content bg-white p-4 rounded" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-job" role="tabpanel" aria-labelledby="pills-job-tab">
+        <form #form="ngForm" (ngSubmit) = "onClickSubmit(form.value)" >
+          <div class="row" >
+            <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+              <!-- <input type="text" class="form-control" name="company_name" placeholder="Company Name" ngModel> -->
+              <select name="company_name" ngModel>
+                  <option  *ngFor="let com of myresponse" [value]="com">{{com}}</option>
+              </select>
+            </div>
+           
+            <!-- <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+              <input type="text" class="form-control form-control-block search-input" name="location" id="autocomplete" placeholder="Location" ngModel>
+            </div> -->
+            <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+              <input type="submit" class="btn btn-primary btn-block" value="Search">
+            </div>
+          </div>
+        </form>
+      </div>       
+      </div>
+    </div>
+
+    <br>
+    <div align="right" style="padding-right: 80px;">
+      <a href="student-pdf"><button mat-raised-button color="primary">PDF</button></a></div>
+    <br>
+    <br>
+    <div class="container">
+      <!-- <h2>Basic Table</h2>
+      <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>             -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Middle Name</th>
+            <th>Lastname</th>
+            
+          </tr>
+        </thead>
+        <tbody *ngFor="let st of myresponse1">
+          <tr>
+            <td>{{st.f_name}}</td>
+            <td>{{st.m_name}}</td>
+            <td>{{st.l_name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    
+  
+  </mat-sidenav-container>

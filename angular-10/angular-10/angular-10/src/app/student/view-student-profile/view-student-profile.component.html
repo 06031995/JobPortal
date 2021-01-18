@@ -1,0 +1,190 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav  mode="side" class="example-sidenav" [ngStyle]="{ 'width.10': sidenavWidth }" opened="true" 
+   >
+   <mat-nav-list>
+    <mat-list-item routerLinkActive="active" >
+      <a routerLink="/view-student-profile"><div fxFlex="10"><mat-icon style="color: #f2f2f2;margin:58px;">home</mat-icon></div></a>
+    </mat-list-item>
+    <hr style="color: #f2f2f2;">
+    <mat-list-item  routerLinkActive="active" >
+      <div class="sidenav-item">
+        <font size="3px" (click)="getadminId()" style="color: #f2f2f2;margin:18px;">View Profile</font>
+      </div>
+      <div fxFlex="10"></div>
+    </mat-list-item>
+    <hr>
+    <mat-list-item  routerLinkActive="active" >
+      <div class="sidenav-item">
+        <a routerLink="/applied-Job-By-student" routerLinkActive="active" style="color: #f2f2f2;margin:18px;"><font size="3px">Applied Job</font></a>
+      </div>
+      <div fxFlex="10"></div>
+    </mat-list-item>
+    <hr style="color: #f2f2f2;">
+    <mat-list-item  routerLinkActive="active" >
+      <div class="sidenav-item">
+        <font size="3px" (click)="getSavedData()" style="color: #f2f2f2;margin:18px;">Saved Job</font>
+      </div>
+      <div fxFlex="10"></div>
+    </mat-list-item>
+    <hr style="color: #f2f2f2;">
+  </mat-nav-list>
+
+  </mat-sidenav>
+<div class="topnav">
+ 
+      <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+   
+    </div>
+  
+  
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <div class="topnav">
+    <a href="#contact">Register</a>
+    <a href="#about">Login</a>
+
+    <div class="topnav-left">
+      <a href="#about">Admin Login</a>
+      </div>
+  </div> -->
+  <br>
+  <br>
+
+  
+<!-- <section class="login-block"> -->
+
+ <!-- <div style="background-image:url('/assets/images/login.jpg');">-->
+  <ng-template #content let-modal>
+    <div class="modal-header" style="background-color: lightsteelblue;">
+      <h4 class="modal-title" id="modal-basic-title" >Reset Password</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" >
+          <!-- <div class="card-card">
+              <div class="card-body">
+                  <div class="form-group"> -->
+                    <table>
+                      <tbody>
+                       <tr>
+                        <td>{{myresponse1.post}}</td><br>
+                       </tr>
+                       <tr>
+                         <td>{{myresponse1.company_name}}</td><br>
+                        
+                        
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.year_of_exp}}</td>
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.vacancy}}</td>
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.location}}</td>
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.salary}}</td>
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.required_skill}}</td>
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.job_desc}}</td>
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.industry_type}}</td>
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.function_area}}</td>
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.role}}</td>
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.employment_type}}</td>
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.education}}</td>
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.website}}</td>
+                       </tr>
+                       <tr>
+                        <td>{{myresponse1.address}}</td>
+                       </tr>
+                       <!-- <tr>
+                        <td>{{myresponse1.student_id}}</td>
+                       </tr> -->
+                      </tbody>
+                    </table>
+                   
+                  <!-- </div> -->
+                  <button type="button"  class="btn btn-primary btn-block"  (click)="saveid()">Apply</button>&nbsp;
+              <!-- </div>
+            </div> -->
+    </div>
+    <div class="modal-footer" style="background-color: lightsteelblue;">
+    </div>
+    </ng-template>
+
+  <div class="job-search" width="100" align="center">
+              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active py-3" id="pills-job-tab" data-toggle="pill" href="#pills-job" role="tab" aria-controls="pills-job" aria-selected="true">Find A Job</a>
+                </li>
+                
+              </ul>
+              <div class="tab-content bg-white p-4 rounded" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-job" role="tabpanel" aria-labelledby="pills-job-tab">
+                  <form #form="ngForm" (ngSubmit) = "onClickSubmit(form.value)">
+                    <div class="row" >
+                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                        <input type="text" class="form-control" name="post" placeholder="eg. Web Developer" ngModel>
+                      </div>
+                     
+                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                        <input type="text" class="form-control form-control-block search-input" name="location" id="autocomplete" placeholder="Location" ngModel>
+                      </div>
+                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                        <input type="submit" class="btn btn-primary btn-block" value="Search">
+                      </div>
+                    </div>
+                  </form>
+                </div>       
+                </div>
+              </div>
+            
+<br>
+<br>
+<br>
+
+
+
+   <!-- First Photo Grid-->
+  
+    <div class="row" >
+      <div class="col-md-5" style="padding-left: 70px;" *ngFor="let cv of myresponse">
+        <mat-card class="card" ><p class="p">Post:{{cv.post}}<mat-icon style="padding-left: 70%; padding-top: 5px;" (click)="saveData(cv.cv_id)">bookmark_border</mat-icon><br>
+          Company Name :{{cv.company_name}}<br>
+          Vacancy:{{cv.vacancy}}<br>
+          Location:{{cv.location}}<br>
+        Salary:{{cv.salary}}<br>
+        Skills:{{cv.required_skill}}</p>
+        <input type="submit" class="btn btn-primary btn-block" (click)="open(content)" (click)="getData(cv.cv_id)" value="View">
+      </mat-card>
+        </div>
+    </div>
+  
+  
+   
+</mat-sidenav-container>
+  
+ 
+  

@@ -1,0 +1,319 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav" [ngStyle]="{ 'width.10': sidenavWidth }" opened="true" 
+     >
+      <mat-nav-list>
+        <mat-list-item routerLinkActive="active" >
+          <a routerLink="/view-student-profile"><div fxFlex="10"><mat-icon style="color: #f2f2f2;margin:58px;">home</mat-icon></div></a>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <font size="3px" (click)="getadminId()" style="color: #f2f2f2;margin:18px;">View Profile</font>
+          </div>
+          <div fxFlex="10"></div>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <a routerLink="/applied-Job-By-student" routerLinkActive="active" style="color: #f2f2f2;margin:18px;"><font size="3px">Applied Job</font></a>
+          </div>
+          <div fxFlex="10"></div>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <font size="3px" (click)="getSavedData()" style="color: #f2f2f2;margin:18px;">Saved Job</font>
+          </div>
+          <div fxFlex="10"></div>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+      </mat-nav-list>
+    </mat-sidenav>
+  <div class="topnav">
+   
+      
+        <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+     
+      
+      </div>
+    
+      <div class="mat-app-background basic-container">
+      <mat-card>
+        <form>
+        <div class="card-body" *ngFor="let st of student" >
+                             
+          <h3>Personal Details:</h3>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="date"> <b>Full Name</b></label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="f_name"  class="form-control" placeholder="First Name" [(ngModel)]="st.f_name" [readonly]="fname_readonly">
+              </div><div class="col-md-3">
+                  <input type="text"  name="m_name" class="form-control" placeholder="Middle Name" [(ngModel)]="st.m_name" [readonly]="mname_readonly">
+                </div><div class="col-md-3">
+                  <input type="text"   name="l_name" class="form-control" placeholder="Last Name" [(ngModel)]="st.l_name" [readonly]="lname_readonly">
+                </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="date"> <b>Contact Number</b></label>
+            </div>
+            <div class="col-md-3">
+                <input type="text"  name="contact_no" class="form-control" placeholder="" [(ngModel)]="st.contact_no" [readonly]="contact_no_readonly">
+              </div>
+          </div>
+          <br>
+          <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="text-input"><b>Date Of Birth </b></label>
+              <div class="col-md-3">
+                <input type="date"   name="dob" class="form-control" placeholder="  " [(ngModel)]="st.dob" [readonly]="dob_readonly">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="text-input"><b>Gender </b></label>
+              <div class="col-md-6">
+                 
+                  <!-- <mat-radio-group aria-label="Select an option" >
+                      <mat-radio-button style="margin: 5px;"  #gen [value]="1" (change)="gender(gen.value)">Male</mat-radio-button>
+                      <mat-radio-button  #gen2 [value]="2" (change)="gender(gen2.value)">Female</mat-radio-button>
+                    </mat-radio-group> -->
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="text-input"><b>Email Id </b></label>
+              <div class="col-md-3">
+                <input type="text"  name="email_id"  class="form-control" placeholder="  " [(ngModel)]="st.email_id" [readonly]="email_id_readonly">
+              </div>
+            </div>
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="text-input"><b>Address</b></label>
+        <div class="col-md-6">
+            <textarea id="textarea"  name="address"   rows="4" class="form-control" placeholder="Write something here..." [(ngModel)]="st.address" [readonly]="address_readonly"></textarea>
+          </div>
+      </div>
+     
+      </div>
+      <br>
+      <div class="card-body" *ngFor="let st of student" >
+                              
+        <h3>Educational Details:</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+              <label for="date"> <b>10th</b></label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="clg_name_10"   class="form-control" placeholder="School/College Name" [(ngModel)]="st.clg_name_10" [readonly]="clg_name_10_readonly">
+              </div>
+              <div class="col-md-3">
+                <select class="custom-select" name="passing_yr_10" [(ngModel)]="st.passing_yr_10" [disabled]="passing_yr_10_readonly">
+                    <option value="Passing year" disabled>Passing year</option>
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                 </select>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" name="percent_10"  class="form-control" placeholder="Percentage" [(ngModel)]="st.percent_10" [readonly]="percent_10_readonly">
+                </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="date"> <b>12th</b></label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="clg_name_12"  class="form-control" placeholder="School/College Name" [(ngModel)]="st.clg_name_12" [readonly]="clg_name_12_readonly">
+              </div>
+              <div class="col-md-3">
+                <select class="custom-select" name="passing_yr_12" [(ngModel)]="st.passing_yr_12" [disabled]="passing_yr_12_readonly">
+                    <option value="Passing year" selected>Passing year</option>
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                 </select>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" name="percent_12" class="form-control" placeholder="Percentage" [(ngModel)]="st.percent_12" [readonly]="percent_12_readonly">
+                </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="date"> <b>Degree</b></label>
+            </div>
+            <div class="col-md-3">
+                <select class="custom-select" name="degree"[(ngModel)]="st.degree" [disabled]="degree_readonly">
+                    <option value="Choose degree" selected>Choose degree</option>
+                    <option>MCA</option>
+                    <option>MCS</option>
+                    <option>B.Tech</option>
+                    <option>B.E(IT)</option>
+                 </select>
+              </div>
+              <div class="col-md-3">
+                <select class="custom-select" name="passing_yr_degree" [(ngModel)]="st.passing_yr_degree" [disabled]="passing_yr_degree_readonly">
+                    <option value="Passing year" selected>Passing year</option>
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                 </select>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" name="percent_degree"  class="form-control" placeholder="Percentage" [(ngModel)]="st.percent_degree" [readonly]="percent_degree_readonly">
+                </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="date"> <b>Experience</b></label>
+            </div>
+            <div class="col-md-6">
+                <!-- <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button style="margin: 5px;" value="1" (click)="radioYes()">Yes</mat-radio-button>
+                    <mat-radio-button value="2" (click)="radioNo()">No</mat-radio-button>
+                  </mat-radio-group> -->
+            </div>
+          </div>
+            <br>
+            <br>
+            <div >
+            <div class="row" >
+                <div class="col-md-3">
+                  <label for="date"> <b>Last Organization</b></label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="last_org"  class="form-control" placeholder="" [(ngModel)]="st.last_org" [readonly]="last_org_readonly">
+                  </div>
+                  <br>
+              </div>
+              <br>
+              <div class="row" >
+                <div class="col-md-3">
+                  <label for="date"> <b>Years of Experience </b></label>
+                </div>
+                <div class="col-md-3">
+                    <select class="custom-select" name="exp_years" [(ngModel)]="st.exp_years" [disabled]="exp_years_readonly" >
+                        <option value="0" selected>0</option>
+                        <option>0-1</option>
+                        <option>1-2</option>
+                        <option>2-3</option>
+                        <option>3-4</option>
+                        <option>4-5</option>
+                        <option>5-6</option>
+                        <option>6-7</option>
+                        <option>7-8</option>
+                        <option>8-9</option>
+                        <option>9-10</option>
+                     </select>
+                  </div>
+                 
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="date"> <b>Last CTC</b></label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="last_ctc"  class="form-control" placeholder="" [(ngModel)]="st.last_ctc" [readonly]="last_ctc_readonly">Lac
+                  </div>
+                  
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="notice_period"> <b>Notice Period</b></label>
+                </div>
+                <div class="col-md-3">
+                  <select class="custom-select" name="notice_period" [(ngModel)]="st.notice_period" [disabled]="notice_period_readonly">
+                      <option value="Notice Period" selected>Notice period</option>
+                      <option>15 Days</option>
+                      <option>1 Month</option>
+                      <option>2 Month</option>
+                      <option>3 Month</option>
+                   </select>
+                  </div>
+              
+              </div>
+            </div>
+          <br>
+    
+    </div>
+    <br>
+    <div class="card-body" *ngFor="let st of student" >
+                             
+      <h3>Skills:</h3>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="date"> <b>Key Skills</b></label>
+        </div>
+        <div class="col-md-3">
+            <input type="text"  name="key_skills" class="form-control" placeholder="" [(ngModel)]="st.key_skills" [readonly]="key_skills_readonly" >
+          </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="date"> <b>Projects</b></label>
+        </div>
+        <div class="col-md-3">
+            <input type="text"  name="projects" class="form-control" placeholder="" [(ngModel)]="st.projects" [readonly]="projects_readonly">
+          </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="date"> <b>Certifications</b></label>
+        </div>
+        <div class="col-md-3">
+            <input type="text"  name="certifications" class="form-control" placeholder="" [(ngModel)]="st.certifications" [readonly]="certifications_readonly">
+          </div>
+      </div>
+      <br>
+      <div>
+        <button type="submit" class="btn btn-sm btn-primary" (click)="update()" *ngIf="show"> UPDATE</button>
+        <button type="submit" class="btn btn-sm btn-primary" (click)="save(st)" *ngIf="!show"> SAVE</button>
+        <!-- <button type="submit" class="btn btn-sm btn-primary" (click)="save(st)" *ngIf="!show"> SAVE</button> -->
+
+      <br>
+      <br>
+    </div>
+  </div>
+</form>
+      </mat-card>
+      </div>
+      
+  
+  
+  </mat-sidenav-container>
+    
+   
+    

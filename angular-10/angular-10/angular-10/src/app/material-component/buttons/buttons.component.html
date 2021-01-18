@@ -1,0 +1,193 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div class="main-container"> 
+    <!-- ============================================================== -->
+    <!-- Topbar - style you can find in header.scss -->
+    <!-- ============================================================== -->
+    <mat-toolbar color="primary" class="topbar telative">
+        <!-- ============================================================== -->
+        <!-- Logo - style you can find in header.scss -->
+        <!-- ============================================================== -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+                <!-- Logo icon --><b>
+                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                    <!-- Dark Logo icon -->
+                    <!-- <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo"> -->
+                    <!-- Light Logo icon -->
+                    <!-- <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo"> -->
+                </b>
+                <!--End Logo icon -->
+                <!-- Logo text -->
+                <span fxShow="false" fxShow.gt-xs>
+                 <!-- dark Logo text -->
+                 <!-- <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo"> -->
+                 <!-- Light Logo text -->    
+                 <!-- <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage"> -->
+                </span> </a>
+        </div>
+        <!-- ============================================================== -->
+        <!-- sidebar toggle -->
+        <!-- ============================================================== -->
+        
+        <button mat-icon-button  value="sidebarclosed">
+            <mat-icon (click)="snav.toggle()">menu</mat-icon>
+        </button>
+          
+        <span fxFlex></span>
+        <!-- ============================================================== -->
+        <!-- app header component - style you can find in header.scss / header.component.ts-->
+        <!-- ============================================================== -->
+     <!-- <app-header></app-header>  -->
+    </mat-toolbar>
+    
+    <!-- ============================================================== -->
+    <!-- End Topbar - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <!-- <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0"> -->
+        <!-- ============================================================== -->
+        <!-- Sidebar - style you can find in sidebar.scss -->
+        <!-- ============================================================== -->
+        <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'" fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches"  >
+            
+                <!-- <app-sidebar></app-sidebar> -->
+               
+            
+        </mat-sidenav> 
+        <!-- ============================================================== -->
+        <!-- Sidebar - style you can find in sidebar.scss -->
+        <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- Page container - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <!-- <mat-sidenav-content class="page-wrapper">
+                 
+                <div class="page-content">
+                   
+                        <router-outlet><app-spinner></app-spinner></router-outlet>
+                    
+                </div>    
+               
+        </mat-sidenav-content> -->
+        <!-- ============================================================== -->
+        <!-- Page container - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+    <!-- </mat-sidenav-container> -->
+</div>
+
+<mat-card>
+	<mat-card-content>    
+	<mat-card-title>Buttons</mat-card-title>
+			<mat-card-subtitle>Angular Material buttons are native <code> button or a </code> elements enhanced with Material Design styling and ink ripples. <code><a href="https://material.angular.io/components/button/overview" target="_blank">Official Doc</a></code></mat-card-subtitle>
+	
+			<h4>Basic Buttons <br/><code class="bg-light">&lt;button mat-button color="primary"&gt;Primary&lt;/button&gt;</code></h4>
+		<div class="button-row">
+			<button mat-button>Basic</button>
+			<button mat-button color="primary">Primary</button>
+			<button mat-button color="accent">Accent</button>
+			<button mat-button color="warn">Warn</button>
+			<button mat-button disabled>Disabled</button>
+			<a mat-button routerLink=".">Link</a>
+		</div>
+
+		<h4>Raised Buttons <br/><code class="bg-light">&lt;button mat-raised-button color="primary"&gt;Primary&lt;/button&gt;</code></h4>
+		<div class="button-row">
+			<button mat-raised-button>Basic</button>
+			<button mat-raised-button color="primary">Primary</button>
+			<button mat-raised-button color="accent">Accent</button>
+			<button mat-raised-button color="warn">Warn</button>
+			<button mat-raised-button disabled>Disabled</button>
+			<a mat-raised-button routerLink=".">Link</a>
+		</div>
+
+		<h4>Icon Buttons <br/><code class="bg-light">&lt;button mat-icon-button color="primary"&gt; <br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;mat-icon aria-label="Example icon-button with a heart icon"&gt;favorite&lt;/mat-icon&gt;<br/>&lt;/button&gt;</code></h4>
+		<div class="button-row">
+			<button mat-icon-button>
+				<mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+			</button>
+			<button mat-icon-button color="primary">
+				<mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+			</button>
+			<button mat-icon-button color="accent">
+				<mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+			</button>
+			<button mat-icon-button color="warn">
+				<mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+			</button>
+			<button mat-icon-button disabled>
+				<mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+			</button>
+		</div>
+
+		<h4>Fab Buttons <br/><code class="bg-light">&lt;button mat-fab color="primary"&gt;Primary&lt;/button&gt;</code></h4>
+		<div class="button-row">
+			<button mat-fab>Basic</button>
+			<button mat-fab color="primary">Primary</button>
+			<button mat-fab color="accent">Accent</button>
+			<button mat-fab color="warn">Warn</button>
+			<button mat-fab disabled>Disabled</button>
+			<button mat-fab>
+				<mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+			</button>
+			<a mat-fab routerLink=".">Link</a>
+		</div>
+
+		<h4>Mini Fab Buttons <br/><code class="bg-light">&lt;button mat-mini-fab color="primary"&gt;Primary&lt;/button&gt;</code></h4>
+		<div class="button-row">
+			<button mat-mini-fab>Base</button>
+			<button mat-mini-fab color="primary">Pri</button>
+			<button mat-mini-fab color="accent">Acc</button>
+			<button mat-mini-fab color="warn">Warn</button>
+			<button mat-mini-fab disabled>Dis</button>
+			<button mat-mini-fab>
+				<mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+			</button>
+			<a mat-mini-fab routerLink=".">Link</a>
+		</div>
+
+		<h4>Basic button-toggles <span class="bg-success text-white rounded font-12 pl-5 pr-5">New</span></h4>
+		<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+		  	<mat-button-toggle value="bold">Bold</mat-button-toggle>
+		  	<mat-button-toggle value="italic">Italic</mat-button-toggle>
+		  	<mat-button-toggle value="underline">Underline</mat-button-toggle>
+		</mat-button-toggle-group>
+
+
+		<h4>Button toggle </h4>  
+		<mat-button-toggle-group #group="matButtonToggleGroup">
+			<mat-button-toggle value="left">
+				<mat-icon>format_align_left</mat-icon>
+			</mat-button-toggle>
+			<mat-button-toggle value="center">
+				<mat-icon>format_align_center</mat-icon>
+			</mat-button-toggle>
+			<mat-button-toggle value="right">
+				<mat-icon>format_align_right</mat-icon>
+			</mat-button-toggle>
+			<mat-button-toggle value="justify" disabled>
+				<mat-icon>format_align_justify</mat-icon>
+			</mat-button-toggle>
+		</mat-button-toggle-group>
+		<div class="m-t-20">Selected value: {{group.value}}</div>  
+
+
+		<h4>Button toggle appearance <span class="bg-success text-white rounded font-12 pl-5 pr-5">New</span></h4>
+		<span>Default appearance:</span>
+		<mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="m-l-20">
+		    <mat-button-toggle value="bold">Bold</mat-button-toggle>
+		    <mat-button-toggle value="italic">Italic</mat-button-toggle>
+		    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+		</mat-button-toggle-group><br/>
+
+		<div class="m-t-20">
+			<span>Legacy appearance:</span>
+		  	<mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" class="m-l-20">
+			    <mat-button-toggle value="bold">Bold</mat-button-toggle>
+			    <mat-button-toggle value="italic">Italic</mat-button-toggle>
+			    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+		  	</mat-button-toggle-group>
+		</div>
+	</mat-card-content>
+</mat-card>

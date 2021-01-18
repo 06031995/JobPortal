@@ -1,0 +1,130 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav"  opened="true">
+        <mat-nav-list>
+          <!-- <mat-list-item routerLinkActive="active" > -->
+            <div fxFlex="10"style="padding-left:55px;" ><Strong><u>ADMIN PANEL</u></Strong></div><hr>
+          <!-- </mat-list-item><hr> -->
+          <mat-list-item  routerLinkActive="active" >
+              <div class="sidenav-item">
+                <a routerLink="/dash" routerLinkActive="active"style="padding-left:40px;"  ><font size="3px">Dashboard</font></a>
+              </div>
+            </mat-list-item><hr>
+          <mat-list-item  routerLinkActive="active" >
+            <div class="sidenav-item">
+              <a routerLink="/create-vacancy" routerLinkActive="active" style="padding-left:35px;" ><font size="3px">Create Vacancy</font></a>
+            </div>
+          </mat-list-item><hr>
+          <mat-list-item  routerLinkActive="active" >
+              <div class="sidenav-item">
+                <a routerLink="/created-list" routerLinkActive="active" style="padding-left:35px;" ><font size="3px">Vacancies lists</font></a>
+              </div>
+            </mat-list-item><hr>
+            <mat-list-item  routerLinkActive="active" >
+              <div class="sidenav-item">
+                <a routerLink="/mail" routerLinkActive="active"style="padding-left:35px;" ><font size="3px">Mail</font></a>
+              </div>
+            </mat-list-item><hr>
+        </mat-nav-list>
+    
+      </mat-sidenav>
+
+    
+  <div class="topnav">
+        <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+      </div>
+          
+             
+      <section class="login-block">
+      <div class="container">
+      
+          
+              <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+              <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+              <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+              <!------ Include the above in your HEAD tag ---------->
+            
+              <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-md-12 mb-8">
+                        <form #mailform="ngForm" (ngSubmit)="mail(mailform.value)">
+                            <div class="card-body">
+                               
+                                  <h3>Send Mail:</h3>
+                                  <hr>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                        <i class="icon-user"><b>To</b></i>
+                                      </div>
+                                    <div class="col-md-3"> 
+                                        <input type="text" class="form-control" id="to" name="to" placeholder="To" ngModel>                                      </div>
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>From</b></label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text"  name="gmailuser" class="form-control" placeholder="From" ngModel>
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <!-- <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Password</b></label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text"  name="year_of_exp" class="form-control" placeholder="Password" ngModel>
+                                      </div>
+                                    </div> -->
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Subject</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="subject" class="form-control" placeholder="Subject" ngModel>
+                                          </div>
+                                      </div>
+                                      <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Message</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="message" class="form-control" placeholder="Message" ngModel>
+                                          </div>
+                                      </div> <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <!-- <label for="date"> <b>Message</b></label> -->
+                                        </div>
+                                        <div class="col-md-3">
+                                            
+                                                <input #file type="file" name="file"  (change)="detectFiles($event)" ngModel/>
+                                        </div>
+                                          
+                                      </div>
+                                     
+                                    
+                            
+                             
+                                      <input type="submit" value="submit"  class="btn btn-info mr-1" >
+                               
+                              </div>
+                          
+                        
+                      
+                          
+                          <div class="card-footer">
+                          </div>
+                       
+                        </form>
+                     </div> 
+                </div>
+                </div>
+          
+          
+   
+  </div>
+  </section> 
+  </mat-sidenav-container>

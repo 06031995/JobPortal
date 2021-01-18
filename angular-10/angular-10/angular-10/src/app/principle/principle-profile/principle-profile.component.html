@@ -1,0 +1,142 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav"  opened="true">
+        <mat-nav-list>
+          <!-- <mat-list-item routerLinkActive="active" > -->
+            <div fxFlex="10"style="padding-left:55px;" ><Strong><u></u></Strong></div><hr>
+          <!-- </mat-list-item><hr> -->
+            <mat-list-item  routerLinkActive="active" >
+              <div class="sidenav-item">
+                <a routerLink="/mail" routerLinkActive="active"style="padding-left:35px;" ><font size="3px">Mail</font></a>
+              </div>
+            </mat-list-item><hr>
+        </mat-nav-list>
+    
+      </mat-sidenav>
+
+    
+  <div class="topnav">
+        <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+      </div>
+          
+             
+      <section class="login-block">
+      <div class="container">
+      
+          
+              <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+              <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+              <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+              <!------ Include the above in your HEAD tag ---------->
+            
+              <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-md-12 mb-8">
+                        <form #userprinciple="ngForm" (ngSubmit)="clickOnSubmit(userprinciple.value)">
+                            <div class="card-body">
+                               
+                                  <h3>Principal Details:</h3>
+                                  <hr>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                        <i class="icon-user"><b>Principal Name:-</b></i>
+                                      </div>
+                                    <div class="col-md-3"> 
+                                        <input type="text" class="form-control" id="to" name="principle_name" placeholder="" ngModel>                                      </div>
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Principal's Phone No:-</b></label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text"  name="principle_ph" class="form-control" placeholder="" ngModel>
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <!-- <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Password</b></label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text"  name="year_of_exp" class="form-control" placeholder="Password" ngModel>
+                                      </div>
+                                    </div> -->
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>College Name:</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="college_name" class="form-control" placeholder="Name" ngModel>
+                                          </div>
+                                      </div>
+                                      <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>College Code:</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="college_code" class="form-control" placeholder="110000" ngModel>
+                                          </div>
+                                      </div> <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>College phone No:</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="college_ph" class="form-control" placeholder="" ngModel>
+                                          </div>
+                                      </div> <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Email:</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="email" class="form-control" placeholder="example@gmail.com" ngModel>
+                                          </div>
+                                      </div> <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Address:</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="address" class="form-control" placeholder="Address" ngModel>
+                                          </div>
+                                          <div class="col-md-3">
+                                            <input type="text"  name="address" class="form-control" placeholder="Address" ngModel>
+                                          </div>
+                                      </div> <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <!-- <label for="date"> <b>Message</b></label> -->
+                                        </div>
+                                        <div class="col-md-3">
+                                            
+                                                <input #file type="file" name="file"  ngModel/>
+                                        </div>
+                                          
+                                      </div>
+                                     
+                                    
+                            
+                             
+                                      <input type="submit" value="submit"  class="btn btn-info mr-1" >
+                               
+                              </div>
+                          
+                        
+                      
+                          
+                          <div class="card-footer">
+                          </div>
+                       
+                        </form>
+                     </div> 
+                </div>
+                </div>
+          
+          
+   
+  </div>
+  </section> 
+  </mat-sidenav-container>

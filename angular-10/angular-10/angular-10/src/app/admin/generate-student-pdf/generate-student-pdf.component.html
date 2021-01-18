@@ -1,0 +1,120 @@
+<!-- <div class="container">
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Middle Name</th>
+          <th>Lastname</th>
+          
+        </tr>
+      </thead>
+      <tbody *ngFor="let st of myresponse">
+        <tr>
+          <td>{{st.f_name}}</td>
+          <td>{{st.m_name}}</td>
+          <td>{{st.l_name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+  <mat-sidenav-container fullscreen class="t1">
+   
+
+      <!-- for view -->
+      <ng-template #content1 let-modal>
+        <div class="modal-header" style="background-color: lightsteelblue;">
+          <h4 class="modal-title" id="modal-basic-title" >View</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+            
+              <div style="padding-left:380px;">
+              <button type="button"  class="btn btn-primary btn-block"  style="width:70px;" (click)="modal.dismiss('Cross click')">Cancle</button>&nbsp;
+            </div>
+
+             
+        </div>
+        <div class="modal-footer" style="background-color: lightsteelblue;">
+        </div>
+    </ng-template>
+         <!-- for view end-->
+
+           <!-- for update -->
+      
+      <ng-template #content2 let-modal>
+        <div class="modal-header" style="background-color: lightsteelblue;">
+          <h4 class="modal-title" id="modal-basic-title" >Update</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        <div class="modal-footer" style="background-color: lightsteelblue;">
+        </div>
+        </ng-template>
+         <!-- for update end-->
+
+        <!-- for Delete -->
+      
+   
+         <!-- for Delete end-->
+    
+  
+          
+              <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+              <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+              <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+              <!------ Include the above in your HEAD tag ---------->
+              <section #contentToConvert>
+             
+                <!--for demo wrap-->
+                <h1>JOB SEEKERS LIST</h1>
+                <div class="container">
+  
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Firstname</th>
+                          <th>Middle Name</th>
+                          <th>Lastname</th>
+                          <th>Email</th>
+                          <th>Contact No</th>
+                          <th>Certification</th>
+                          <th>Experience</th>
+                          <th>Skills</th>
+                          <th>Last CTC</th>
+                          <th> Last Organisation</th>
+                          <th>Notice Period</th>
+                          <th>Projects</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let st of myresponse">
+                        <tr>
+                          <td>{{st.f_name}}</td>
+                          <td>{{st.m_name}}</td>
+                          <td>{{st.l_name}}</td>
+                          <td>{{st.email_id}}</td>
+                            <td>{{st.contact_no}}</td>
+                                <td>{{st.certifications}}</td>
+                                    <td>{{st.exp_years}}</td>
+                                        <td>{{st.key_skills}}</td>
+                                            <td>{{st.last_ctc}}</td>
+                                                <td>{{ st.last_org}}</td>
+                                                    <td>{{st.notice_period}}</td>
+                                                        <td>{{st.projects}}</td>
+
+                        </tr>
+                      </tbody>
+                      <div style="padding-left: 500px;">
+                       <button mat-raised-button color="primary" (click)="generatePdf(contentToConvert)" *ngIf="show">PDF</button></div>
+                      <br>
+                    </table>
+                  </div>
+              </section>
+ 
+  
+  </mat-sidenav-container>

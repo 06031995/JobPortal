@@ -1,0 +1,54 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav" [ngStyle]="{ 'width.10': sidenavWidth }" opened="true" 
+     >
+      <mat-nav-list>
+        <mat-list-item routerLinkActive="active" >
+          <a routerLink="/view-student-profile"><div fxFlex="10"><mat-icon style="color: #f2f2f2;margin:58px;">home</mat-icon></div></a>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <font size="3px" (click)="getadminId()" style="color: #f2f2f2;margin:18px;">View Profile</font>
+          </div>
+          <div fxFlex="10"></div>
+        </mat-list-item>
+        <hr>
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <a routerLink="/applied-Job-By-student" routerLinkActive="active" style="color: #f2f2f2;margin:18px;"><font size="3px">Applied Job</font></a>
+          </div>
+          <div fxFlex="10"></div>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <font size="3px" (click)="getSavedData()" style="color: #f2f2f2;margin:18px;">Saved Job</font>
+          </div>
+          <div fxFlex="10"></div>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+      </mat-nav-list>
+    </mat-sidenav>
+  <div class="topnav">
+        <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+  </div>
+  <br>
+  <br>
+  <a href="/applied-Job-By-student-list">
+            <div class="col-md-3" style="padding-left: 30px;"  >
+      <div class="card" style="width: 18rem; background:linear-gradient(60deg,#33adff,#008ae6); ">
+        <div class="card-body">
+              <h4 class="card-title">Total Applied Job</h4>
+              <h6 class="card-subtitle mb-2 text-muted" style="color:black;">{{len}}</h6><br>
+              <!-- <button class="btn btn-primary btn-sm">Small</button> -->
+            </div>
+        </div>
+</div>
+</a>
+      
+  
+  
+  </mat-sidenav-container>
+    
+   
+    

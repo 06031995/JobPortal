@@ -1,0 +1,247 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav  mode="side" class="example-sidenav"  opened="true">
+    <mat-nav-list>
+      <!-- <mat-list-item routerLinkActive="active" > -->
+        <div fxFlex="10"style="padding-left:55px;" ><Strong><u>ADMIN PANEL</u></Strong></div><hr>
+      <!-- </mat-list-item><hr> -->
+      <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <a routerLink="/dash" routerLinkActive="active"style="padding-left:40px;"  ><font size="3px">Dashboard</font></a>
+          </div>
+        </mat-list-item><hr>
+      <mat-list-item  routerLinkActive="active" >
+        <div class="sidenav-item">
+          <a routerLink="/create-vacancy" routerLinkActive="active" style="padding-left:35px;" ><font size="3px">Create Vacancy</font></a>
+        </div>
+      </mat-list-item><hr>
+      <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <a routerLink="/created-list" routerLinkActive="active" style="padding-left:35px;" ><font size="3px">Vacancies lists</font></a>
+          </div>
+        </mat-list-item><hr>
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <a routerLink="/mail" routerLinkActive="active"style="padding-left:35px;" ><font size="3px">Mail</font></a>
+          </div>
+        </mat-list-item><hr>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <div class="topnav">
+   
+        <!-- <router-outlet></router-outlet> -->
+        <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+     
+        <!-- <a class="active" href="#home">Home</a>
+        
+        <a href="#news">About</a> -->
+        <!-- <a href="#contact"></a>
+        <a href="#about"></a> -->
+      </div>
+    
+    
+      <section class="login-block">
+      <div class="container">
+      
+          
+              <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+              <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+              <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+              <!------ Include the above in your HEAD tag ---------->
+            
+              <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-md-12 mb-8">
+                        <div class="card-footer">
+                          <div></div>
+                         
+                          <div></div>
+                        </div>
+                        <form #vacancy="ngForm" (ngSubmit) = "onClickSubmit(vacancy.value)"  >
+  
+                        <mat-tab-group #allTabs>
+                          <mat-tab label="Job highlights">
+                            <div class="card-body">
+                               
+                                  <h3>Job highlights:</h3>
+                                  <hr>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Post</b></label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text"  name="post" class="form-control" placeholder="" ngModel>
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Company Name</b></label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text"  name="company_name" class="form-control" placeholder="" ngModel>
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Years Of experience</b></label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text"  name="year_of_exp" class="form-control" placeholder="" ngModel>
+                                      </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Vacancies</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="vacancy" class="form-control" placeholder="" ngModel>
+                                          </div>
+                                      </div>
+                                      <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Location</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="location" class="form-control" placeholder="" ngModel>
+                                          </div>
+                                      </div> <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Salary</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="salary" class="form-control" placeholder="" ngModel>
+                                          </div>
+                                      </div> <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Required Skill</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <textarea type="textarea"  name="required_skill" class="form-control" placeholder="" ngModel></textarea>
+                                          </div>
+                                      </div> <br>
+                                    
+                            
+                             
+                              <button tabindex="-1" type="button" class="btn btn-sm btn-primary" color="warn" (click)='moveToSelectedTab("Job Description")'>Next</button>
+                               
+                              </div>
+                          </mat-tab>
+                          <mat-tab label="Job Description">
+                            <div class="card-body">
+                                
+                                  <h3>Job Description:</h3>
+                                  <hr>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Job Description</b></label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <textarea type="text"  name="job_desc" class="form-control" placeholder="" ngModel></textarea>
+                                      </div>
+                                  </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Industry Type</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="industry_type" class="form-control" placeholder="" ngModel>
+                                          </div>
+                                      </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Function Area</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <textarea type="text"  name="function_area" class="form-control" placeholder="" ngModel></textarea>
+                                          </div>
+                                      </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Role</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <textarea type="text"  name="role" class="form-control" placeholder="" ngModel></textarea>
+                                          </div>
+                                      </div>
+                                      <br>
+                                      <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Employment Type</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="employment_type" class="form-control" placeholder="" ngModel>
+                                          </div>
+                                      </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Education</b></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text"  name="education" class="form-control" placeholder="" ngModel>
+                                          </div>
+                                      </div>
+                                    <button tabindex="-1" type="button" color="warn" class="btn btn-sm btn-primary" (click)='moveToSelectedTab("Company Info")'>Next</button>
+                              
+                              </div>
+                          </mat-tab>
+                      
+                          <mat-tab label="Company Info">
+                            <div class="card-body">
+                               
+                                  <h3>Company Info:</h3>
+                                  <hr>
+                                
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Website</b></label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text"  name="website" class="form-control" placeholder="" ngModel>
+                                     
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Headquarters/Address</b></label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <textarea type="text"  name="address" class="form-control" placeholder="" ngModel></textarea>
+                                       
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <div>
+                                    <button style="margin: 5px;" type="reset" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Reset</button> 
+                                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-ban"></i> Submit</button>
+                                  <br>
+                                  <br>
+                                </div>
+                              </div>
+                          </mat-tab>
+                          <div class="card-footer">
+                          </div>
+                        </mat-tab-group>
+                        </form>
+                     </div> 
+                </div>
+                </div>
+          
+          
+   
+  </div>
+  </section>
+  
+  </mat-sidenav-container>

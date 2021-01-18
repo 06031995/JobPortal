@@ -1,0 +1,350 @@
+<mat-sidenav-container fullscreen class="t1">
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav"  opened="true">
+        <mat-nav-list>
+          <!-- <mat-list-item routerLinkActive="active" > -->
+            <div fxFlex="10"style="padding-left:55px;" ><Strong><u>ADMIN PANEL</u></Strong></div><hr>
+          <!-- </mat-list-item><hr> -->
+          <mat-list-item  routerLinkActive="active" >
+              <div class="sidenav-item">
+                <a routerLink="/dash" routerLinkActive="active"style="padding-left:40px;"  ><font size="3px">Dashboard</font></a>
+              </div>
+            </mat-list-item><hr>
+          <mat-list-item  routerLinkActive="active" >
+            <div class="sidenav-item">
+              <a routerLink="/create-vacancy" routerLinkActive="active" style="padding-left:35px;" ><font size="3px">Create Vacancy</font></a>
+            </div>
+          </mat-list-item><hr>
+          <mat-list-item  routerLinkActive="active" >
+              <div class="sidenav-item">
+                <a routerLink="/created-list" routerLinkActive="active" style="padding-left:35px;" ><font size="3px">Vacancies lists</font></a>
+              </div>
+            </mat-list-item><hr>
+            <mat-list-item  routerLinkActive="active" >
+              <div class="sidenav-item">
+                <a routerLink="/mail" routerLinkActive="active"style="padding-left:35px;" ><font size="3px">Mail</font></a>
+              </div>
+            </mat-list-item><hr>
+        </mat-nav-list>
+    
+      </mat-sidenav>
+
+      <!-- for view -->
+      <ng-template #content1 let-modal>
+        <div class="modal-header" style="background-color: lightsteelblue;">
+          <h4 class="modal-title" id="modal-basic-title" >View</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+            <table>
+                <tbody>
+                 <tr>
+                     <!-- <label>Post:</label> -->
+                  <td style="font-size: 20px;"><b>Post:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.post}}</td><br>
+                 </tr>
+                 <tr>
+                   <td  style="font-size: 20px;"><b>Company Name:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.company_name}}</td><br>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;" ><b>Years of Experince:</b>Conpany Name:&nbsp;&nbsp;&nbsp;{{myresponse1.year_of_exp}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Vacancy:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.vacancy}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Location:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.location}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Salary:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.salary}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Required Skills:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.required_skill}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Job Description:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.job_desc}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Industry Type:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.industry_type}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Function Area:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.function_area}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Role:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.role}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Emplyoment Type:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.employment_type}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Education:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.education}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Website:</b> &nbsp;&nbsp;&nbsp;{{myresponse1.website}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Address:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.address}}</td>
+                 </tr>
+                </tbody>
+              </table>
+              <div style="padding-left:380px;">
+              <button type="button"  class="btn btn-primary btn-block"  style="width:70px;" (click)="modal.dismiss('Cross click')">Cancle</button>&nbsp;
+            </div>
+
+             
+        </div>
+        <div class="modal-footer" style="background-color: lightsteelblue;">
+        </div>
+    </ng-template>
+         <!-- for view end-->
+
+           <!-- for update -->
+      
+      <ng-template #content2 let-modal>
+        <div class="modal-header" style="background-color: lightsteelblue;">
+          <h4 class="modal-title" id="modal-basic-title" >Update</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"  >
+          
+            <h5><strong> Job highlights: </strong></h5>
+                                  <hr>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Post</b></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text"  name="post" class="form-control" placeholder="" [(ngModel)]="myresponse1.post">
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Company Name</b></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text"  name="company_name" class="form-control" placeholder="" [(ngModel)]="myresponse1.company_name">
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Years Of experience</b></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text"  name="year_of_exp" class="form-control" placeholder="" [(ngModel)]="myresponse1.year_of_exp">
+                                      </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Vacancies</b></label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text"  name="vacancy" class="form-control" placeholder=""  [(ngModel)]="myresponse1.vacancy">
+                                          </div>
+                                      </div>
+                                      <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Location</b></label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text"  name="location" class="form-control" placeholder=""  [(ngModel)]="myresponse1.location">
+                                          </div>
+                                      </div> <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Salary</b></label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text"  name="salary" class="form-control" placeholder=""  [(ngModel)]="myresponse1.salary">
+                                          </div>
+                                      </div> <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Required Skill</b></label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea type="textarea"  name="required_skill" class="form-control" placeholder=""  [(ngModel)]="myresponse1.required_skill"></textarea>
+                                          </div>
+                                      </div> <br>
+
+                                      <h5><strong> Job Description:</strong></h5>
+                                  <hr>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Job Description</b></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <textarea type="text"  name="job_desc" class="form-control" placeholder=""  [(ngModel)]="myresponse1.job_desc"></textarea>
+                                      </div>
+                                  </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Industry Type</b></label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text"  name="industry_type" class="form-control" placeholder=""  [(ngModel)]="myresponse1.industry_type">
+                                          </div>
+                                      </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Function Area</b></label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea type="text"  name="function_area" class="form-control" placeholder=""  [(ngModel)]="myresponse1.function_area"></textarea>
+                                          </div>
+                                      </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Role</b></label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea type="text"  name="role" class="form-control" placeholder=""  [(ngModel)]="myresponse1.role"></textarea>
+                                          </div>
+                                      </div>
+                                      <br>
+                                      <br>
+                                      <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Employment Type</b></label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text"  name="employment_type" class="form-control" placeholder=""  [(ngModel)]="myresponse1.employment_type">
+                                          </div>
+                                      </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                          <label for="date"> <b>Education</b></label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text"  name="education" class="form-control" placeholder=""  [(ngModel)]="myresponse1.education">
+                                          </div>
+                                      </div> 
+                                      <br>
+                                      <h5><strong> Company Info:</strong></h5>
+                                  <hr>
+                                
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Website</b></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text"  name="website" class="form-control" placeholder=""  [(ngModel)]="myresponse1.website">
+                                     
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-3">
+                                      <label for="date"> <b>Headquarters/Address</b></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <textarea type="text"  name="address" class="form-control" placeholder=""  [(ngModel)]="myresponse1.address"></textarea>
+                                       
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <div>
+                                    <button style="margin: 5px;" type="reset" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Reset</button> 
+                                    <button type="submit" class="btn btn-sm btn-primary" (click)="UpdateCVacancy(myresponse1)"><i class="fa fa-ban"></i> Update</button>
+                                  <br>
+                                  <br>
+                                </div>
+
+
+        </div>
+        <div class="modal-footer" style="background-color: lightsteelblue;">
+        </div>
+        </ng-template>
+         <!-- for update end-->
+
+        <!-- for Delete -->
+      
+      <ng-template #content let-modal>
+        <div class="modal-header" style="background-color: lightsteelblue;">
+          <h4 class="modal-title" id="modal-basic-title" >Delete</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+            <div>
+                <p>Are you sure you want to delete this Data? </p>
+            </div>
+            <div class="row" style="padding-left:300px;">
+                <div class="col-md-5"  >
+                      <button type="button"  class="btn btn-primary btn-block" style="width:70px" (click)="deleteVacancy()">Delete</button>&nbsp;
+                 </div>
+                 <div class="col-md-2">
+                      <button type="button"  class="btn btn-primary btn-block"  style="width:70px" (click)="modal.dismiss('Cross click')">Cancle</button>&nbsp;
+                 </div>
+            </div>
+        </div>
+        <div class="modal-footer" style="background-color: lightsteelblue;">
+        </div>
+        </ng-template>
+         <!-- for Delete end-->
+    
+  <div class="topnav">
+        <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+      </div>
+          
+              <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+              <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+              <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+              <!------ Include the above in your HEAD tag ---------->
+              <section >
+                <div class="search-hero">
+                    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching">
+                  </div>
+                <!--for demo wrap-->
+                <h1>VACANCY'S LIST</h1>
+                <div #contentToConvert>
+                <div class="tbl-header">
+                  <table cellpadding="0" cellspacing="0" border="0"  >
+                    <thead>
+                      <tr>
+                        <th>Sr No</th>
+                        <th>Company Name</th>
+                        <th>Post</th>
+                        <th>Vacancy</th>
+                        <th>Location</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <div class="tbl-content">
+                  <table cellpadding="0" cellspacing="0" border="0" >
+                    <tbody>
+                      <tr *ngFor="let admin of myresponse | filter:searchText;let i=index ">
+                        <td>{{i+1}}</td>
+                        <td>{{admin.company_name}}</td>
+                        <td>{{admin.post}}</td>
+                        <td>{{admin.vacancy}}</td>
+                        <td>{{admin.location}}</td>
+                        <td>
+                          <mat-icon (click)="viewVacancy(admin.cv_id)" (click)="open(content1)"  style="margin:10px;" class="but" title="View" style="color:#66a3ff;">remove_red_eye</mat-icon>
+                          <mat-icon (click)="updateVacancy(admin.cv_id)"  (click)="open(content2)" style="margin:15px;" class="but" title="Edit" style="color:#85e085;">edit</mat-icon>
+                          <mat-icon (click)="getDeletId(admin.cv_id)"  (click)="open(content)" class="but" title="Delete" style="color:#ff6666;">delete_outline</mat-icon>
+                        </td>
+                       
+                      </tr>
+                      <tr><button (click)="generatePdf(contentToConvert)">Generate PDF</button></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </section>
+ 
+  
+  </mat-sidenav-container>

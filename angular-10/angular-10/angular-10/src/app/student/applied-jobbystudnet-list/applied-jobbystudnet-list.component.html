@@ -1,0 +1,149 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav" [ngStyle]="{ 'width.10': sidenavWidth }" opened="true" >
+      <mat-nav-list>
+        <mat-list-item routerLinkActive="active" >
+          <a routerLink="/view-student-profile"><div fxFlex="10"><mat-icon style="color: #f2f2f2;margin:58px;">home</mat-icon></div></a>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <font size="3px" (click)="getadminId()" style="color: #f2f2f2;margin:18px;">View Profile</font>
+          </div>
+          <div fxFlex="10"></div>
+        </mat-list-item>
+        <hr>
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <a routerLink="/applied-Job-By-student" routerLinkActive="active" style="color: #f2f2f2;margin:18px;"><font size="3px">Applied Job</font></a>
+          </div>
+          <div fxFlex="10"></div>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <font size="3px" (click)="getSavedData()" style="color: #f2f2f2;margin:18px;">Saved Job</font>
+          </div>
+          <div fxFlex="10"></div>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+      </mat-nav-list>
+    </mat-sidenav>
+      <!-- for view -->
+      <ng-template #content1 let-modal>
+        <div class="modal-header" style="background-color: lightsteelblue;">
+          <h4 class="modal-title" id="modal-basic-title" >View</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+            <table>
+                <tbody>
+                 <tr>
+                     <!-- <label>Post:</label> -->
+                  <td style="font-size: 20px;"><b>Post:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.post}}</td><br>
+                 </tr>
+                 <tr>
+                   <td  style="font-size: 20px;"><b>Company Name:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.company_name}}</td><br>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;" ><b>Years of Experince:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.year_of_exp}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Vacancy:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.vacancy}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Location:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.location}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Salary:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.salary}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Required Skills:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.required_skill}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Job Description:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.job_desc}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Industry Type:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.industry_type}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Function Area:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.function_area}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Role:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.role}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Emplyoment Type:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.employment_type}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Education:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.education}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Website:</b> &nbsp;&nbsp;&nbsp;{{myresponse1.website}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Address:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.address}}</td>
+                 </tr>
+                </tbody>
+              </table>
+              <div style="padding-left:380px;">
+              <button type="button"  class="btn btn-primary btn-block"  style="width:70px;" (click)="modal.dismiss('Cross click')">Cancle</button>&nbsp;
+            </div>
+  
+             
+        </div>
+        <div class="modal-footer" style="background-color: lightsteelblue;">
+        </div>
+    </ng-template>
+  <div class="topnav">
+        <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+</div>
+
+<section >
+       
+    <h1>JOB LIST</h1>
+    <div #contentToConvert>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0"  >
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Company Name</th>
+            <th>Post</th>
+            <th>Vacancy</th>
+            <th>Location</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0" >
+        <tbody>
+          <tr *ngFor="let st of myresponse;let i=index;">
+            <td>{{i+1}}</td>
+            <td>{{st.company_name}}</td>
+            <td>{{st.post}}</td>
+            <td>{{st.vacancy}}</td>
+            <td>{{st.location}}</td>
+            <td>
+              <mat-icon  style="margin:10px;" (click)="viewVacancy(st.cv_id)" (click)="open(content1)"   class="but" title="View" style="color:#66a3ff;">remove_red_eye</mat-icon>
+              <!-- <mat-icon style="margin:15px;" class="but" title="Edit" style="color:#85e085;">edit</mat-icon> -->
+              <!-- <mat-icon  class="but" title="Delete" style="color:#ff6666;">delete_outline</mat-icon> -->
+            </td>
+           
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </section>
+
+    
+     
+  </mat-sidenav-container>
+    
+   
+    

@@ -1,0 +1,50 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav" [ngStyle]="{ 'width.10': sidenavWidth }" opened="true" 
+     >
+      <!-- <div class="logomain">Logo Part</div> -->
+      <mat-nav-list>
+      
+        <mat-list-item routerLinkActive="active" >
+          
+          <!-- <mat-icon mat-list-icon style="color: #f2f2f2;">person</mat-icon> -->
+          <div fxFlex="10"></div>
+          <!-- <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <a routerLink="/about" routerLinkActive="active" style="color: #f2f2f2;">About</a>
+          </div> -->
+        </mat-list-item>
+  
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <a routerLink="/create-vacancy" routerLinkActive="active" style="color: #f2f2f2;margin:18px;"><font size="3px">Create Vacancy</font></a>
+          </div>
+          <!-- <mat-icon mat-list-icon style="color: #f2f2f2;">person</mat-icon> -->
+          <div fxFlex="10"></div>
+          <!-- <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <a routerLink="/about" routerLinkActive="active" style="color: #f2f2f2;">About</a>
+          </div> -->
+        </mat-list-item>
+  
+        
+       
+  
+  
+  
+      </mat-nav-list>
+  
+    </mat-sidenav>
+  <div class="topnav">
+   
+        <!-- <router-outlet></router-outlet> -->
+        <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+     
+        <!-- <a class="active" href="#home">Home</a>
+        
+        <a href="#news">About</a> -->
+        <!-- <a href="#contact"></a>
+        <a href="#about"></a> -->
+      </div>
+    
+    
+  <p>Dashboard</p>
+  
+  </mat-sidenav-container>

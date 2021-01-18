@@ -1,0 +1,141 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav"  opened="true">
+      <mat-nav-list>
+        <!-- <mat-list-item routerLinkActive="active" > -->
+          <div fxFlex="10"style="padding-left:55px;" ><Strong><u>ADMIN PANEL</u></Strong></div><hr>
+        <!-- </mat-list-item><hr> -->
+        <mat-list-item  routerLinkActive="active" >
+            <div class="sidenav-item">
+              <a routerLink="/dash" routerLinkActive="active"style="padding-left:40px;" ><font size="3px">Dashboard</font></a>
+            </div>
+          </mat-list-item><hr>
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <a routerLink="/create-vacancy" routerLinkActive="active"style="padding-left:35px;" ><font size="3px">Create Vacancy</font></a>
+          </div>
+        </mat-list-item><hr>
+        <mat-list-item  routerLinkActive="active" >
+            <div class="sidenav-item">
+              <a routerLink="/created-list" routerLinkActive="active"style="padding-left:35px;" ><font size="3px">Vacancies lists</font></a>
+            </div>
+          </mat-list-item><hr>
+          <mat-list-item  routerLinkActive="active" >
+            <div class="sidenav-item">
+              <a routerLink="/mail" routerLinkActive="active"style="padding-left:35px;" ><font size="3px">Mail</font></a>
+            </div>
+          </mat-list-item><hr>
+      </mat-nav-list>
+  
+    </mat-sidenav>
+  <div class="topnav">
+        <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+      </div>
+      <section class="login-block">
+      <div class="container">
+              <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+              <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+              <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+              <!------ Include the above in your HEAD tag ---------->
+  </div>
+  </section>
+  
+ 
+ <p></p>
+
+ <p></p>
+
+ <p></p>
+<br>
+
+
+
+<div class="row" >
+      <a href="registered-student"><div class="col-md-3" style="padding-left: 30px;" >
+            <div class="card" style="width: 18rem; background:linear-gradient(60deg,#b3d9ff,#80bfff);">
+              <div class="card-body">
+                <h4 class="card-title">Registered Student</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Total Count=<b>{{registercount}}</b></h6><br>
+                <!-- <button class="btn btn-primary btn-sm">Small</button> -->
+              </div>
+            </div>
+        </div></a>
+
+         <div class="col-md-3" style="padding-left: 30px;"  >
+                <div class="card" style="width: 18rem; background:linear-gradient(60deg,#ffb3d9,#ff80bf); ">
+                  <div class="card-body">
+                        <h4 class="card-title">Current Vacancies</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Total count={{currentvacancy}}</h6><br>
+                        <!-- <button class="btn btn-primary btn-sm">Small</button> -->
+                      </div>
+                  </div>
+         </div>
+
+         <a href="applied-student"><div class="col-md-3" style="padding-left: 30px;"  >
+            <div class="card" style="width: 18rem;background:linear-gradient(60deg,#ccffb3,#aaff80);">
+                <div class="card-body">
+                    <h4 class="card-title">Applieded Student </h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Total Count={{appliedJob}}</h6><br>
+                    <!-- <button class="btn btn-primary btn-sm">Small</button> -->
+                  </div>
+            </div>
+     </div></a>
+   
+
+     <div class="col-md-3" style="padding-left: 30px;"  >
+        <!-- <div class="card" style="width: 18rem;background:linear-gradient(60deg,#ffd9b3,#ffbf80);">
+            <div class="card-body">
+                <h4 class="card-title">Today's Applied Student</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6><br>
+              <button class="btn btn-primary btn-sm">Small</button> 
+              </div>
+        </div> -->
+ </div>
+    </div>
+    <br>
+    <br>
+
+
+    <div class="row" >
+        <div class="col-md-3" style="padding-left: 30px;" >
+              <div class="card" style="width: 18rem; background:linear-gradient(60deg,#5cd6d6,#2eb8b8);">
+                <div class="card-body">
+                  <h4 class="card-title">Today's Applied</h4>
+                  <h6 class="card-subtitle mb-2 text-muted">Total count={{CurrentAppliedForJob}}</h6><br>
+                  <!-- <button class="btn btn-primary btn-sm">Small</button> -->
+                </div>
+              </div>
+          </div>
+  
+          <a href=" principal-list"><div class="col-md-3" style="padding-left: 30px;"  >
+                  <div class="card" style="width: 18rem; background:linear-gradient(60deg,#33adff,#008ae6); ">
+                     <div class="card-body">
+                          <h4 class="card-title">Total Principal Count</h4>
+                          <h6 class="card-subtitle mb-2 text-muted">{{TotalPrinciple}}</h6><br>
+                          <!-- <button class="btn btn-primary btn-sm">Small</button> -->
+                        </div>
+                    </div>
+           </div></a>
+  
+           <div class="col-md-3" style="padding-left: 30px;"  >
+              <div class="card" style="width: 18rem;background:linear-gradient(60deg,#ccffb3,#aaff80);">
+                  <div class="card-body">
+                      <h4 class="card-title">Card title</h4>
+                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6><br>
+                      <!-- <button class="btn btn-primary btn-sm">Small</button> -->
+                    </div>
+              </div>
+       </div>
+     
+  
+       <div class="col-md-3" style="padding-left: 30px;"  >
+          <!-- <div class="card" style="width: 18rem;background:linear-gradient(60deg,#ffd633,#e6b800);">
+              <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6><br>
+                  <!-- <button class="btn btn-primary btn-sm">Small</button> 
+                </div>
+          </div> -->
+   </div>
+      </div>
+  
+  </mat-sidenav-container>

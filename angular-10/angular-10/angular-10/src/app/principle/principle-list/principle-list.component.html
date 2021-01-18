@@ -1,0 +1,124 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav"  opened="true">
+        <mat-nav-list>
+            <!-- <mat-list-item routerLinkActive="active" > -->
+              <div fxFlex="10"style="padding-left:55px;" ><Strong><u>ADMIN PANEL</u></Strong></div><hr>
+            <!-- </mat-list-item><hr> -->
+            <mat-list-item  routerLinkActive="active" >
+                <div class="sidenav-item">
+                  <a routerLink="/dash" routerLinkActive="active"style="padding-left:40px;"  ><font size="3px">Dashboard</font></a>
+                </div>
+              </mat-list-item><hr>
+            <mat-list-item  routerLinkActive="active" >
+              <div class="sidenav-item">
+                <a routerLink="/create-vacancy" routerLinkActive="active" style="padding-left:35px;" ><font size="3px">Create Vacancy</font></a>
+              </div>
+            </mat-list-item><hr>
+            <mat-list-item  routerLinkActive="active" >
+                <div class="sidenav-item">
+                  <a routerLink="/created-list" routerLinkActive="active" style="padding-left:35px;" ><font size="3px">Vacancies lists</font></a>
+                </div>
+              </mat-list-item><hr>
+              <mat-list-item  routerLinkActive="active" >
+                <div class="sidenav-item">
+                  <a routerLink="/mail" routerLinkActive="active"style="padding-left:35px;" ><font size="3px">Mail</font></a>
+                </div>
+              </mat-list-item><hr>
+          </mat-nav-list>
+    
+      </mat-sidenav>
+
+       <!-- for view -->
+       <ng-template #content1 let-modal>
+        <div class="modal-header" style="background-color: lightsteelblue;">
+          <h4 class="modal-title" id="modal-basic-title" >View</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+            <table>
+                <tbody>
+                 <tr>
+                     <!-- <label>Post:</label> -->
+                  <td style="font-size: 20px;"><b>College Code:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.college_code}}</td><br>
+                 </tr>
+                 <tr>
+                   <td  style="font-size: 20px;"><b>College Name:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.college_name}}</td><br>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;" ><b>College Phone:</b>Conpany Name:&nbsp;&nbsp;&nbsp;{{myresponse1.college_ph}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Email:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.email}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Principal's Name:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.principle_name}}</td>
+                 </tr>
+                 <tr>
+                  <td style="font-size: 20px;"><b>Principal's Phone Number:</b>&nbsp;&nbsp;&nbsp;{{myresponse1.principle_ph}}</td>
+                 </tr>
+                </tbody>
+              </table>
+              <div style="padding-left:380px;">
+              <button type="button"  class="btn btn-primary btn-block"  style="width:70px;" (click)="modal.dismiss('Cross click')">Cancle</button>&nbsp;
+            </div>
+
+             
+        </div>
+        <div class="modal-footer" style="background-color: lightsteelblue;">
+        </div>
+    </ng-template>
+         <!-- for view end-->
+        <div class="topnav">
+        <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+         </div>
+          <br>
+          <br>
+         <section >
+            <div class="search-hero">
+                <input class="form-control" type="text" name="search"  autocomplete="off" placeholder="&#61442;  Start searching">
+              </div>
+            <!--for demo wrap-->
+            <h1>Principal LIST</h1>
+            <div #contentToConvert>
+            <div class="tbl-header">
+              <table cellpadding="0" cellspacing="0" border="0"  >
+                <thead>
+                  <tr>
+                    <th>Sr No</th>
+                    <th>College Code</th>
+                    <th>College Name</th>
+                    <th>Principal's Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="tbl-content">
+              <table cellpadding="0" cellspacing="0" border="0" >
+                <tbody>
+                  <tr *ngFor="let principle of myresponse;let i=index ">
+                    <td>{{i+1}}</td>
+                    <td>{{principle.college_code}}</td>
+                    <td>{{principle.college_name}}</td>
+                    <td>{{principle.principle_name}}</td>
+                    <td>{{principle.email}}</td>
+                    <td>{{principle.principle_ph}}</td>
+                    <td>
+                      <mat-icon (click)="viewPrinciple(principle.principle_id)" (click)="open(content1)"  style="margin:10px;" class="but" title="View" style="color:#66a3ff;">remove_red_eye</mat-icon>
+                      <!-- <mat-icon (click)="updateVacancy(admin.cv_id)"  (click)="open(content2)" style="margin:15px;" class="but" title="Edit" style="color:#85e085;">edit</mat-icon> -->
+                      <!-- <mat-icon (click)="getDeletId(admin.cv_id)"  (click)="open(content)" class="but" title="Delete" style="color:#ff6666;">delete_outline</mat-icon> -->
+                    </td>
+                   
+                  </tr>
+                  <!-- <tr><button (click)="generatePdf(contentToConvert)">Generate PDF</button></tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          </section>  
+    
+  </mat-sidenav-container>

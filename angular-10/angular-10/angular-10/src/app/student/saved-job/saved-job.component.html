@@ -1,0 +1,55 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav" [ngStyle]="{ 'width.10': sidenavWidth }" opened="true" 
+     >
+      <mat-nav-list>
+        <mat-list-item routerLinkActive="active" >
+          <a routerLink="/view-student-profile"><div fxFlex="10"><mat-icon style="color: #f2f2f2;margin:58px;">home</mat-icon></div></a>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <font size="3px" (click)="getadminId()" style="color: #f2f2f2;margin:18px;">View Profile</font>
+          </div>
+          <div fxFlex="10"></div>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+        <mat-list-item  routerLinkActive="active" >
+          <div class="sidenav-item">
+            <a routerLink="/applied-Job-By-student" routerLinkActive="active" style="color: #f2f2f2;margin:18px;"><font size="3px">Applied Job</font></a>
+          </div>
+          <div fxFlex="10"></div>
+        </mat-list-item>
+        <hr style="color: #f2f2f2;">
+        <mat-list-item  routerLinkActive="active" >
+            <div class="sidenav-item">
+              <font size="3px" (click)="getSavedData()" style="color: #f2f2f2;margin:18px;">Saved Job</font>
+            </div>
+            <div fxFlex="10"></div>
+          </mat-list-item>
+          <hr style="color: #f2f2f2;">
+      </mat-nav-list>
+    </mat-sidenav>
+  <div class="topnav">
+        <mat-icon (click)="sidenav.toggle()" style="color: #f2f2f2;" class="sidenav-menu">menu</mat-icon>
+  </div>
+ 
+  <div class="row" >
+    <div class="col-md-5" style="padding-left: 70px;">
+      <mat-card class="card" ><p class="p">Post:{{myresponse1.post}}<br>
+        Company Name :{{myresponse1.company_name}}<br>
+        Vacancy:{{myresponse1.vacancy}}<br>
+        Location:{{myresponse1.location}}<br>
+      Salary:{{myresponse1.salary}}<br>
+      Skills:{{myresponse1.required_skill}}</p>
+      <input type="submit" class="btn btn-primary btn-block"  value="View">
+    </mat-card>
+   
+      </div>
+  </div>
+
+  
+  
+  </mat-sidenav-container>
+    
+   
+    

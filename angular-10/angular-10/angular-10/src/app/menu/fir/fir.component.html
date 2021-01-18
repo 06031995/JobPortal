@@ -1,0 +1,170 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div class="main-container"> 
+    <!-- ============================================================== -->
+    <!-- Topbar - style you can find in header.scss -->
+    <!-- ============================================================== -->
+    <mat-toolbar color="primary" class="topbar telative">
+        <!-- ============================================================== -->
+        <!-- Logo - style you can find in header.scss -->
+        <!-- ============================================================== -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+                <!-- Logo icon --><b>
+                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                    <!-- Dark Logo icon -->
+                    <!-- <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo"> -->
+                    <!-- Light Logo icon -->
+                    <!-- <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo"> -->
+                </b>
+                <!--End Logo icon -->
+                <!-- Logo text -->
+                <span fxShow="false" fxShow.gt-xs>
+                 <!-- dark Logo text -->
+                 <!-- <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo"> -->
+                 <!-- Light Logo text -->    
+                 <!-- <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage"> -->
+                </span> </a>
+        </div>
+        <!-- ============================================================== -->
+        <!-- sidebar toggle -->
+        <!-- ============================================================== -->
+        
+        <button mat-icon-button  value="sidebarclosed">
+            <mat-icon (click)="snav.toggle()">menu</mat-icon>
+        </button>
+          
+        <span fxFlex></span>
+        <!-- ============================================================== -->
+        <!-- app header component - style you can find in header.scss / header.component.ts-->
+        <!-- ============================================================== -->
+     <!-- <app-header></app-header>  -->
+    </mat-toolbar>
+    
+    <!-- ============================================================== -->
+    <!-- End Topbar - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+        <!-- ============================================================== -->
+        <!-- Sidebar - style you can find in sidebar.scss -->
+        <!-- ============================================================== -->
+        <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'" fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches"  >
+            
+                <app-sidebar1></app-sidebar1>
+               
+            
+        </mat-sidenav> 
+        <!-- ============================================================== -->
+        <!-- Sidebar - style you can find in sidebar.scss -->
+        <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- Page container - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <mat-sidenav-content class="page-wrapper">
+                 
+                <div class="page-content">
+                   
+                    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+                    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+                    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+                    <!------ Forgot password ---------->
+                   
+                    
+                    <!------ Include the above in your HEAD tag ---------->
+                    <div class="topnav">
+                        <!-- <a  href="#home">Home</a>
+                        <a href="#news">News</a> -->
+                        <!-- <a routerLink="/student-login" routerLinkActive="active">Login</a> -->
+                      </div>
+                      
+                      
+                      
+                    
+                    <section class="login-block">
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 login-sec">
+                                <h2 class="text-center">Login Now</h2>
+                                <form  class="login-form">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1" class="text-uppercase">Username</label>
+                        <input type="text" formControlName="email" class="form-control" placeholder="">
+                        
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+                        <input type="password" formControlName="password" class="form-control" placeholder="">
+                      </div>
+                      
+                      
+                      
+                        <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input">
+                          <small>Remember Me</small>
+                        </label>
+                      <button type="submit" value="submit"class="btn btn-login float-right">Submit</button>
+                      </div>
+                      
+                    </form><br><br> 
+                    <div align="center">
+                      
+                            
+                            <!-- <a routerLink="/register" routerLinkActive="active">Create a new Account</a><br> -->
+                            <button mat-raised-button >Forgot Password</button>
+                    </div>
+                    <div class="copy-text">Created with <i class="fa fa-heart"></i> by SPCL</div>
+                            </div>
+                            <div class="col-md-8 banner-sec">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                     <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                      </ol>
+                                <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                          <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg" alt="First slide">
+                          <div class="carousel-caption d-none d-md-block">
+                            <div class="banner-text">
+                                <h2>This is Heaven</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                            </div>	
+                      </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img class="d-block img-fluid" src="https://images.pexels.com/photos/7097/people-coffee-tea-meeting.jpg" alt="First slide">
+                          <div class="carousel-caption d-none d-md-block">
+                            <div class="banner-text">
+                                <h2>This is Heaven</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                            </div>	
+                        </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img class="d-block img-fluid" src="https://images.pexels.com/photos/872957/pexels-photo-872957.jpeg" alt="First slide">
+                          <div class="carousel-caption d-none d-md-block">
+                            <div class="banner-text">
+                                <h2>This is Heaven</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                            </div>	
+                        </div>
+                      </div>
+                                </div>	   
+                                
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </section>
+                    
+                </div>    
+               
+        </mat-sidenav-content>
+        <!-- ============================================================== -->
+        <!-- Page container - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+    </mat-sidenav-container>
+</div>
